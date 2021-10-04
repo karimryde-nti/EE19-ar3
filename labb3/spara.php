@@ -10,6 +10,14 @@
 <body>
     <div class="kontainer">
         <h1 class="display-4">Gästboken</h1>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="gastbok.php">Skriva</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="lasa.php">Läsa</a>
+            </li>
+        </ul>
         <?php
         // Ta emot data som skickas
         $rubrik = filter_input(INPUT_POST, 'rubrik', FILTER_SANITIZE_STRING);
@@ -21,14 +29,17 @@
             // Filnamnet
             $filnamn = "gastbok.txt";
 
+            setlocale(LC_ALL, "sv_SE.utf8");
+            $klockslag = strftime("%H:%M:%S %A %y %B");
+
             // Texten att spara
-            $texten = "
-            $rubrik
-            $meddelande
-            $namn";
+            $texten = "<h3>$rubrik<br>";
+            $texten .= "$klockslag</h3>";
+            $texten .= "<p>$meddelande</p>";
+            $texten .= "<p>$namn</p>";
 
             // Spara i textfil
-            file_put_contents($filnamn, $texten);
+            file_put_contents($filnamn, $texten, FILE_APPEND);
 
             // Bekräftelse
             echo "<p class=\"alert alert-success\">Meddelandet har sparats!</p>";
