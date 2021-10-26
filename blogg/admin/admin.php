@@ -19,7 +19,13 @@
             </nav>
         </header>
         <main>
-            ...
+            <form action="./spara.php" method="post">
+                <label>Rubrik</label>
+                <input type="text" name="rubrik" required>
+                <label>Meddelande</label>
+                <textarea name="meddelande" required></textarea>
+                <button>Skicka</button>
+            </form>
         </main>
         <footer>
             Hösten 2021
