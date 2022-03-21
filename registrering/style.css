@@ -1,0 +1,11 @@
+.kontainer {
+    width: 800px;
+    padding: 2em;
+    margin: 2em auto;
+    background: #e0e0e0;
+}
+form {
+    margin: 2em;
+    padding: 2em;
+    background: #FFF;
+}
