@@ -16,6 +16,6 @@ $conn = new mysqli($host, $användare, $lösenord, $databas);
 if ($conn->connect_error) {
     die("Någonting blev fel! " . $conn->connect_error);
 } else {
-    echo "<p>Hurra! Det gick bra att ansluta till databasen!</p>";
+    //echo "<p>Hurra! Det gick bra att ansluta till databasen!</p>";
 }
 ?>
