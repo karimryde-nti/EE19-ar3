@@ -20,7 +20,7 @@ if (!isset($_SESSION['inloggad'])) {
 
 <body>
     <?php
-    if ($_SESSION['inloggad'] == true) {
+    if (isset($_SESSION['inloggad']) && $_SESSION['inloggad'] == true) {
         echo "<p class=\"alert alert-success\">Du är inloggad</p>";
     } else {
         echo "<p class=\"alert alert-warning\">Du är utloggad</p>";
@@ -43,10 +43,10 @@ if (!isset($_SESSION['inloggad'])) {
                 } else {
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="./admin.php">Admin</a>
+                        <a class="nav-link active" href="./admin.php">Admin</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="./logout.php">Logga ut</a>
+                        <a class="nav-link" href="./logout.php">Logga ut</a>
                     </li>
                 <?php
                 }
@@ -54,10 +54,7 @@ if (!isset($_SESSION['inloggad'])) {
             </ul>
         </nav>
         <main>
-            <?php
-                $_SESSION['inloggad'] = false;
-                echo "<p class=\"alert alert-warning\">Du är utloggad!</p>";
-            ?>
+            <h3>Admin</h3>
         </main>
     </div>
 </body>

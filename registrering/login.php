@@ -1,6 +1,11 @@
 <?php
 include "konfigdb.php";
 session_start();
+
+// Om det inte finns en session betyder det att man inte är inloggad
+if (!isset($_SESSION['inloggad'])) {
+    $_SESSION['inloggad'] = false;
+}
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -15,7 +20,7 @@ session_start();
 
 <body>
     <?php
-    if ($_SESSION['inloggad'] == true) {
+    if (isset($_SESSION['inloggad']) && $_SESSION['inloggad'] == true) {
         echo "<p class=\"alert alert-success\">Du är inloggad</p>";
     } else {
         echo "<p class=\"alert alert-warning\">Du är utloggad</p>";
@@ -28,18 +33,24 @@ session_start();
                 <?php
                 if ($_SESSION['inloggad'] == false) {
                 ?>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Logga in</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Logga in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./registrera.php">Registrera</a>
+                    </li>
+                <?php
+                } else {
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./admin.php">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./logout.php">Logga ut</a>
+                    </li>
                 <?php
                 }
                 ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="./registrera.php">Registrera</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./logout.php">Logga ut</a>
-                </li>
             </ul>
         </nav>
         <main>
@@ -92,6 +103,8 @@ session_start();
 
                         // Kom ihåg att vi lyckats logga in
                         $_SESSION['inloggad'] = true;
+
+                        header("Location: admin.php");
                     } else {
                         echo "<p class=\"alert alert-warning\">Epost eller lösenordet stämmer inte</p>";
                     }
