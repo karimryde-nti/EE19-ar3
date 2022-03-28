@@ -5,6 +5,11 @@ session_start();
 // Om det inte finns en session betyder det att man inte är inloggad
 if (!isset($_SESSION['inloggad'])) {
     $_SESSION['inloggad'] = false;
+
+}
+// Ajabaja! Skickas direkt till login.php
+if ($_SESSION['inloggad'] == false) {
+    header("Location: login.php");
 }
 ?>
 <!DOCTYPE html>
@@ -34,7 +39,7 @@ if (!isset($_SESSION['inloggad'])) {
                 if ($_SESSION['inloggad'] == false) {
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Logga in</a>
+                        <a class="nav-link" aria-current="page" href="./login.php">Logga in</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./registrera.php">Registrera</a>
@@ -57,6 +62,9 @@ if (!isset($_SESSION['inloggad'])) {
             <?php
                 $_SESSION['inloggad'] = false;
                 echo "<p class=\"alert alert-warning\">Du är utloggad!</p>";
+
+                // Nu är användaren utloggad, skickas till inloggningssidan
+                header("Location: login.php");
             ?>
         </main>
     </div>

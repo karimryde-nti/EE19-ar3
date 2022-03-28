@@ -34,10 +34,10 @@ if (!isset($_SESSION['inloggad'])) {
                 if ($_SESSION['inloggad'] == false) {
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Logga in</a>
+                        <a class="nav-link" aria-current="page" href="./login.php">Logga in</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="./registrera.php">Registrera</a>
+                        <a class="nav-link active" href="#">Registrera</a>
                     </li>
                 <?php
                 } else {
