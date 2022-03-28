@@ -11,6 +11,9 @@ h1 {
     margin: 2em auto;
     background: #fff;
 }
+main {
+    padding: 2em;
+}
 form {
     margin: 2em;
     padding: 2em;

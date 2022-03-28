@@ -20,7 +20,7 @@ if (!isset($_SESSION['inloggad'])) {
 
 <body>
     <?php
-    if (isset($_SESSION['inloggad']) && $_SESSION['inloggad'] == true) {
+    if ($_SESSION['inloggad'] == true) {
         echo "<p class=\"alert alert-success\">Du är inloggad</p>";
     } else {
         echo "<p class=\"alert alert-warning\">Du är utloggad</p>";
