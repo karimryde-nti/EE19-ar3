@@ -61,7 +61,7 @@ if ($_SESSION['inloggad'] == false) {
         <main>
             <?php
                 $_SESSION['inloggad'] = false;
-                echo "<p class=\"alert alert-warning\">Du är utloggad!</p>";
+                //echo "<p class=\"alert alert-warning\">Du är utloggad!</p>";
 
                 // Nu är användaren utloggad, skickas till inloggningssidan
                 header("Location: login.php");

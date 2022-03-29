@@ -61,37 +61,37 @@ if ($_SESSION['inloggad'] == false) {
         <main>
             <h3>Admin</h3>
             <?php
-            // Lista akla användare
-            // Steg 1: SQL-satsen
-            $sql = "SELECT * FROM register";
+                // Steg 1: sql-satsen
+                $sql = "SELECT * FROM register";
 
-            // Steg 2: kör SQL-satsen
-            $resultat = $conn->query($sql);
+                // Steg 2: Köra sql-satsen
+                $resultat = $conn->query($sql);
 
-            // Gick det bra att köra SQL-satsen?
-            if (!$resultat) {
-                die("<p class=\"alert alert-warning\">Någonting är fel med SQL-satsen!</p>");
-            } else {
-                // Steg 3: bearbeta resultatet
-                echo "<table class=\"table\">
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Namn</th>
-                                <th>Epost</th>
-                            </tr>
-                        </thead>
-                        <tbody>";
-                while ($rad = $resultat->fetch_assoc()) {
-                    echo "<tr>
-                            <td>$rad[id]</td>
-                            <td>$rad[namn]</td>
-                            <td>$rad[epost]</td>
-                          </tr>";
+                // Steg 3: kolla att det funkade
+                if (!$resultat) {
+                    die("<p class=\"alert alert-warning\">Någonting är fel med SQL-satsen!</p>");
+                } else {
+                    // Steg 4: plocka ut svaren, dvs alla rader
+                    // Gå igenom alla rader
+                    echo "<table class=\"table\">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Namn</th>
+                                    <th>Epost</th>
+                                </tr>
+                            </thead>
+                           <tbody>";
+                    while ($rad = $resultat->fetch_assoc()) {
+                        echo "<tr>
+                                <td>$rad[id]</td>
+                                <td>$rad[namn]</td>
+                                <td>$rad[epost]</td>
+                              </tr>";
+                    }
+                    echo "</tbody>
+                        </table>";
                 }
-                echo "</tbody>
-                    </table>";
-            }
             ?>
         </main>
     </div>

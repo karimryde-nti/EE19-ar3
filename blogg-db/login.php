@@ -29,19 +29,19 @@ if (!isset($_SESSION['inloggad'])) {
     <div class="kontainer">
         <h1>Bloggen</h1>
         <nav>
-            <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs">
                 <?php
                 if ($_SESSION['inloggad'] == false) {
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Logga in</a>
+                        <a class="nav-link active" aria-current="page" href="./login.php">Logga in</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./registrera.php">Registrera</a>
+                        <a class="nav-link" href="#">Registrera</a>
                     </li>
                 <?php
                 } else {
-                    ?>
+                ?>
                     <li class="nav-item">
                         <a class="nav-link" href="./admin.php">Admin</a>
                     </li>
@@ -88,7 +88,7 @@ if (!isset($_SESSION['inloggad'])) {
                 // 2. Kör SQL-kommandot
                 $resultat = $conn->query($sql);
 
-                // Gick det bra att köra SQL-satsen?
+                // 3. Gick det bra att köra SQL-satsen?
                 if (!$resultat) {
                     die("<p class=\"alert alert-warning\">Någonting är fel med SQL-satsen!</p>");
                 } else {

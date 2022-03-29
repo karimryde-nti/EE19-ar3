@@ -41,7 +41,7 @@ if (!isset($_SESSION['inloggad'])) {
                     </li>
                 <?php
                 } else {
-                    ?>
+                ?>
                     <li class="nav-item">
                         <a class="nav-link" href="./admin.php">Admin</a>
                     </li>
