@@ -16,7 +16,7 @@ if ($email && $password) {
 
     // 3. Gick det bra att köra SQL-satsen?
     if (!$resultat) {
-        echo "Någonting är fel med SQL-satsen";
+        echo "1";
     } else {
 
         // Plocka ut svaret och lägg det i arrayen $rad[]
@@ -24,9 +24,9 @@ if ($email && $password) {
 
         // Kolla om lösenordet och hashen matchar
         if (password_verify($password, $rad['hash'])) {
-            echo "Du är inloggad";
+            echo "2";
         } else {
-            echo "Epost eller lösenordet stämmer inte";
+            echo "3";
         }
     }
 }
