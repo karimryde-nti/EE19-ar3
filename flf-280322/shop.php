@@ -9,24 +9,24 @@
 </head>
 <body>
     <div class="kontainer">
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./lista.php">Kundvagnen</a>
-            </li>
+        <h1>Webbshop</h1>
+        <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link active" href="./shop.php">Lägg till</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./lista.php">Kundvagnen</a>
+            </li>
         </ul>
         <form class="form-control" action="#" method="post">
-            <h3>Kundvagn</h3>
 
-            <label class="form-label">Namn på vara</label>
+            <label class="form-label">Ang vara</label>
             <input class="form-control" type="text" name="namn">
 
-            <label class="form-label">Pris</label>
+            <label class="form-label">Ange pris</label>
             <input class="form-control" type="text" name="pris">
 
-            <label class="form-label">Art. nr</label>
+            <label class="form-label">Ange artikelnr</label>
             <input class="form-control" type="text" name="artnr">
 
             <button class="btn btn-success">Lägg till vara</button>

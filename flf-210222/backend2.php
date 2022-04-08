@@ -27,7 +27,8 @@
             file_put_contents("$namnet.txt", $texten);
 
             // Bekräfta att texten sparats
-            echo "<p class=\"alert alert-success\">Din texten är sparad i $namnet.txt</p>";
+            echo "<p class=\"alert alert-success\">Din texten är sparad i $namnet.txt:</p>";
+            echo "<pre class=\"alert alert-info\">$texten</pre>";
         }
         
         ?>

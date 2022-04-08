@@ -9,19 +9,21 @@
 </head>
 <body>
     <div class="kontainer">
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./lista.php">Kundvagnen</a>
-            </li>
+        <h1>Spara i kundvagnen</h1>
+        <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link" href="./shop.php">Lägg till</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./lista.php">Kundvagnen</a>
+            </li>
         </ul>
-        <h3>Spara i kundvagnen</h3>
         <?php
+        // Läs all text i filen
         $varor = file_get_contents("kundvagn.txt");
 
-        echo "<pre>$varor</pre>";
+        // Skriv ut allt
+        echo "<pre class=\"alert alert-info\">$varor</pre>";
         ?>
     </div>
 </body>
