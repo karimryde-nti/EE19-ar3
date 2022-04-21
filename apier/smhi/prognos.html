@@ -21,12 +21,9 @@
         fetch("smhi.php")
             .then(response => response.json())
             .then(data => {
-                data.forEach(element => {
-                    klockslag.push(element.label);
-                    temperaturer.push(element.t);
-
-                    console.log(klockslag, temperaturer);
-                });
+                klockslag = data.label;
+                temperaturer = data.t;
+                console.log(klockslag, temperaturer);
 
                 const ctx = document.getElementById('myChart').getContext('2d');
                 const myChart = new Chart(ctx, {
