@@ -38,7 +38,7 @@
             // 2. Avkoda json-svaret
             $data = json_decode($json);
 
-            // 3. Plocka data vi vill ha
+            // 3. Plocka ut data vi vill ha
             // - resultCount
             // - results
             $resultCount = $data->resultCount;
