@@ -12,6 +12,7 @@
     // Skapa en klass PersonInkomst
     // Engenskaperna: förnamn, efternamn, timlön, antalTimmar
     class PersonInkomst {
+        
         // Egenskaper
         public $förnamn = "";
         public $efternamn = "";

@@ -12,6 +12,7 @@
     // Med egenskaperna: modell, pris, färg, årsmodell
     // Med metod: Sammanfattning()
     class Bil {
+        
         // Egenskaper
         public $modell = "";
         public $pris = 0;

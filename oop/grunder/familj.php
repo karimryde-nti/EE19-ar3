@@ -11,6 +11,7 @@
     // Skapa en klass Familj
     // Med två egenskaper förnamn och efternamn
     class Familj {
+        
         // Egenskaper
         public $förnamn = "";
         public $efternamn = "";
