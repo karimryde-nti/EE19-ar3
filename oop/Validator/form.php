@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Ladda in klassen
-include "./user-validator.php";
+include "./Validator.php";
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -25,19 +25,19 @@ include "./user-validator.php";
         <form action="#" method="post">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Username</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name" name="username">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name" name="username" required>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email" required>
             </div>
-            <button type="submit" class="btn btn-primary">Primary</button>
+            <button type="submit" name="formulär" class="btn btn-primary">Skicka</button>
         </form>
         <main>
             <?php
             // Kolla att data skickats från formuläret
-            if (isset($_POST['submit'])) {
-
+            if (isset($_POST['formulär'])) {
+                
                 // Använd klassen Validator
                 $controll = new UserValidator($_POST);
                 $controll->ValidateUsername();
