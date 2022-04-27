@@ -6,18 +6,6 @@ error_reporting(E_ALL);
 
 // Ladda in klassen
 include "./user-validator.php";
-
-// Kolla att data skickats
-$username = filter_input(INPUT_POST, "username");
-$email = filter_input(INPUT_POST, "email");
-if ($username && $email) {
-    //echo "<p>$username && $email</p>";
-
-    // Använd klassen Validator
-    $controll = new UserValidator($_POST);
-    $controll->ValidateUsername();
-    $controll->ValidateEmail();
-}
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -37,7 +25,7 @@ if ($username && $email) {
         <form action="#" method="post">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Username</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="username">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name" name="username">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
@@ -45,6 +33,18 @@ if ($username && $email) {
             </div>
             <button type="submit" class="btn btn-primary">Primary</button>
         </form>
+        <main>
+            <?php
+            // Kolla att data skickats från formuläret
+            if (isset($_POST['submit'])) {
+
+                // Använd klassen Validator
+                $controll = new UserValidator($_POST);
+                $controll->ValidateUsername();
+                $controll->ValidateEmail();
+            }
+            ?>
+        </main>
     </div>
 </body>
 
