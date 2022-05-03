@@ -1,0 +1,45 @@
+/* Enkel CSS-reset */
+body {
+    background: #F9F6EB;
+}
+.kontainer {
+    width: 600px;
+    padding: 2em;
+    margin: 3em auto 0 auto;
+    background: #fff;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 12px #f0e9d1;
+}
+nav {
+    margin: 20px 0;
+}
+form {
+    display: grid;
+    grid-template-columns: 25% 70%;
+    grid-gap: 20px;
+    margin: 20px 0;
+}
+label, input, button, textarea {
+    padding: 0.5em;
+    border: none;
+    border-radius: 3px;
+}
+label {
+    text-align: right;
+}
+input, textarea {
+    border-radius: 0.3em;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+textarea {
+    height: 10em;
+}
+p {
+    padding: 1em;
+    border: 1px solid #f0e9d1;
+    border-radius: 0.3em;
+    font-style: italic;
+}
